@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>New Contact Form Submission</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .email-container {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .email-header {
+            background-color: #2563eb;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .email-body {
+            padding: 25px;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .data-table th {
+            text-align: left;
+            padding: 8px 15px;
+            background-color: #f5f7fa;
+            border-bottom: 1px solid #e0e0e0;
+            width: 30%;
+        }
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .message-content {
+            background-color: #f9fafb;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-left: 3px solid #2563eb;
+        }
+        .email-footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+            color: #666666;
+            border-top: 1px solid #e0e0e0;
+        }
+        @media only screen and (max-width: 600px) {
+            .data-table th, .data-table td {
+                display: block;
+                width: 100%;
+            }
+            .data-table th {
+                background-color: transparent;
+                padding-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <h1>New Contact Form Submission</h1>
+        </div>
+        
+        <div class="email-body">
+            <p>You've received a new message through your website contact form:</p>
+            
+            <table class="data-table">
+                <tr>
+                    <th>Name:</th>
+                    <td>{{fullName}}</td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td>{{email}}</td>
+                </tr>
+                <tr>
+                    <th>Received:</th>
+                    <td>{{date}}</td>
+                </tr>
+            </table>
+            
+            <h3>Message:</h3>
+            <div class="message-content">
+                {{message}}
+            </div>
+        </div>
+        
+        <div class="email-footer">
+            <p>This email was sent from your website contact form. Please do not reply directly to this message.</p>
+        </div>
+    </div>
+</body>
+</html>
